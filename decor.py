@@ -1,23 +1,25 @@
 student_list = []
 work = False
 def add_a_Student(student):
-    if student in student_list:
-        print('Пользователь с таким именем уже существует')
-    else:
         student_list.append(student)
         print("Привет " + student)
-    return student_list
+
+def decorator(func):
+    def wraper_decorator(*args):
+        if args[0] not in student_list:
+            return print('Пользователя с таким именем не существует')
+        func(*args)
+    return wraper_decorator
+
+@decorator
 def delete_a_Student(student):
-    if student in student_list:
-        student_list.remove(student)
-        print('Пользователь удален')
-    else:
-        print('Пользователь с таким именем не существует')
-    return student_list
+    student_list.remove(student)
+    print('Пользователь удален')
+
 def exit():
     print("До свидания")
 while not work:
-    student = input("Введите своё имя: ")
+    name = input("Введите своё имя: ")
     key = False
     while not key:
         print('''
@@ -27,9 +29,9 @@ while not work:
         ''')
         answer = input("Введите номер: ")
         if answer == "1":
-            add_a_Student(student)
+            add_a_Student(name)
         elif answer == "2":
-            delete_a_Student(student)
+            delete_a_Student(name)
         elif answer == "3":
             exit()
             key = True
