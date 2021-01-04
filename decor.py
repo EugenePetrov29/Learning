@@ -9,7 +9,7 @@ def decorator(func):
         if args[0] not in student_list:
             return print('Пользователя с таким именем не существует')
         value = func(*args)
-        return func
+        return value
     return wraper_decorator
 
 @decorator
