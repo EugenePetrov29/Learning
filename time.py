@@ -9,6 +9,7 @@ value = True
 while True:
     ct = datetime.datetime.now()
     str_ct = ct.strftime('%H:%M:%S')
+    time.sleep(1)
     for x in num.str1.keys():
         os.system('cls' if os.name == 'nt' else 'clear')
         if x == ':':
@@ -64,5 +65,3 @@ while True:
         else:
             str_ct = str_ct.replace(x, str(num.str5[x]))
     print(str_ct)
-    time.sleep(1)
-   
