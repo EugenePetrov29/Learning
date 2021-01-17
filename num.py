@@ -1,4 +1,4 @@
-s = '\u2B1C'
+s = '\u2B1B'
 o = " "
 
 zero1 = s + s + s + o
